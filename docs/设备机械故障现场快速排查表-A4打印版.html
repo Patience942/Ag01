@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>非标自动化设备机械故障现场快速排查表</title>
+<style>
+@page { size: A4 portrait; margin: 10mm; }
+* { box-sizing: border-box; }
+body { margin: 0; color: #111; font-family: "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; font-size: 10pt; line-height: 1.35; }
+h1 { margin: 0 0 3mm; text-align: center; font-size: 18pt; }
+h2 { margin: 3mm 0 1.5mm; padding: 1.2mm 2mm; background: #1f4e78; color: #fff; font-size: 11pt; }
+p { margin: 1mm 0; }
+.meta { display: flex; justify-content: space-between; border-bottom: 1px solid #333; padding-bottom: 2mm; margin-bottom: 2mm; font-size: 9pt; }
+.notice { border: 1.5px solid #c00000; background: #fff2f2; padding: 2mm; font-weight: bold; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2mm 5mm; }
+.checklist { columns: 2; margin: 1mm 0; padding-left: 5mm; }
+.checklist li { break-inside: avoid; margin-bottom: 1mm; }
+table { width: 100%; border-collapse: collapse; margin: 1mm 0; page-break-inside: avoid; }
+th, td { border: 0.6px solid #555; padding: 1.2mm 1.4mm; vertical-align: top; }
+th { background: #d9eaf7; font-weight: bold; }
+.small { font-size: 8.5pt; }
+.steps { display: flex; gap: 1mm; flex-wrap: wrap; margin: 1mm 0; }
+.step { border: 1px solid #555; padding: 1.5mm 2mm; flex: 1 1 30%; text-align: center; }
+.lines { line-height: 2; }
+.footer { margin-top: 2mm; padding-top: 1.5mm; border-top: 1px solid #555; display: flex; justify-content: space-between; font-size: 8pt; }
+@media print { .no-print { display: none; } }
+</style>
+</head>
+<body>
+<h1>非标自动化设备机械故障现场快速排查表</h1>
+<div class="meta"><span>设备/工位：________________</span><span>日期：__________</span><span>表单编号：AG01-MECH-QC-001</span></div>
+<div class="notice">安全优先：维修前必须急停、断电、断气、断真空并释放残压；升降轴和机械臂必须可靠支撑。</div>
+
+<h2>1. 安全确认（必须先做）</h2>
+<ul class="checklist">
+<li>□ 按下急停</li><li>□ 关闭电源</li><li>□ 关闭气源</li><li>□ 关闭真空源</li><li>□ 释放残压</li><li>□ 升降轴/机械臂已支撑</li><li>□ 确认无误启动风险</li><li>□ 设置“维修中”标识</li>
+</ul>
+
+<h2>2. 按故障现象快速定位</h2>
+<table>
+<thead><tr><th>故障现象</th><th>优先检查</th><th>可能原因</th><th>处理方向</th></tr></thead>
+<tbody>
+<tr><td>机构不动</td><td>电源、气源、急停</td><td>气压不足、阀故障、机械卡滞</td><td>恢复能源，清除卡滞，检查阀和限位</td></tr>
+<tr><td>动作慢/抖动</td><td>气压、节流、导轨</td><td>负载大、缺润滑、安装偏差</td><td>调整气压/节流，清洁润滑并校正</td></tr>
+<tr><td>异响/发热</td><td>导轨、丝杆、轴承</td><td>缺润滑、松动、磨损、不同轴</td><td>停机确认来源，润滑、紧固或更换</td></tr>
+<tr><td>夹不紧/定位偏</td><td>气压、夹爪、定位销</td><td>磨损、夹具松动、来料异常</td><td>清洁、调压、更换定位件并校准</td></tr>
+<tr><td>到位无信号</td><td>传感器位置</td><td>偏移、感应距离异常、线缆问题</td><td>调整安装位置并检查输入信号</td></tr>
+<tr><td>皮带跑偏</td><td>皮带轮和张力</td><td>平行度不良、张力不一致</td><td>调整对中和张力，必要时换件</td></tr>
+<tr><td>吸盘掉料</td><td>真空值、吸盘</td><td>漏气、吸盘老化、工件不洁</td><td>检漏、换吸盘、清洁过滤器和工件</td></tr>
+<tr><td>机构撞击</td><td>缓冲、限位、速度</td><td>缓冲失效、限位偏移、速度过高</td><td>调缓冲、降速，复核软硬限位</td></tr>
+</tbody>
+</table>
+
+<h2>3. 机械模块速查</h2>
+<div class="grid small">
+<div><b>导轨/滑块：</b>卡顿、异响、爬行时，检查润滑、异物、平行度和滑块；处理为清洁、润滑、校正或更换。</div>
+<div><b>丝杆/联轴器：</b>电机转但滑台不动时，检查联轴器、键、紧固螺钉和同轴度。</div>
+<div><b>气缸：</b>不动作或速度慢时，检查气压、节流阀、电磁阀、管路和机械卡滞。</div>
+<div><b>夹具/定位：</b>夹不紧或定位偏时，检查夹爪、定位销、来料尺寸和固定螺钉。</div>
+<div><b>真空吸盘：</b>吸不起或掉料时，检查吸盘、管路、过滤器和真空压力。</div>
+<div><b>皮带/链条：</b>跑偏、打滑或跳齿时，检查张力、轮系平行度和负载。</div>
+</div>
+
+<h2>4. 现场处理顺序</h2>
+<div class="steps"><div class="step">1. 清理卡料<br>碎屑和异物</div><div class="step">2. 检查松动<br>断裂和变形</div><div class="step">3. 检查润滑<br>气压和真空</div><div class="step">4. 手动低速<br>确认阻力</div><div class="step">5. 检查传感器<br>安装和信号</div><div class="step">6. 单步→空载<br>低速→负载</div></div>
+
+<h2>5. 禁止事项与升级条件</h2>
+<div class="grid small"><div><b>禁止：</b>□ 未断能量拆接头　□ 伸手进入危险区　□ 拆限位强行运行　□ 使用不明替代件　□ 带防护拆卸自动运行</div><div><b>立即升级：</b>机架开裂/变形；垂直轴坠落风险；安全门、急停或限位失效；轴承冒烟；高压/液压蓄能部件损坏；故障重复且根因不明。</div></div>
+
+<h2>6. 维修记录</h2>
+<table class="small"><tr><td>故障现象：______________________________________________</td><td>最后正常动作：________________________</td></tr><tr><td>初步判断：______________________________________________</td><td>维修人：____________ 日期：____________</td></tr><tr><td colspan="2">处理措施/更换件：_______________________________________________________________</td></tr><tr><td colspan="2">验证结果：□ 手动通过　□ 单步通过　□ 空载通过　□ 低速通过　□ 负载通过</td></tr></table>
+<div class="footer"><span>AG01 · 设备机械模块现场快查表</span><span>版本：V1.0</span><span>页码：1/1</span></div>
+</body>
+</html>
